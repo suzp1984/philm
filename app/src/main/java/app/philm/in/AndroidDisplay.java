@@ -35,6 +35,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -69,7 +70,7 @@ public class AndroidDisplay implements Display {
 
     private static final TypedValue sTypedValue = new TypedValue();
 
-    private final ActionBarActivity mActivity;
+    private final AppCompatActivity mActivity;
     private final DrawerLayout mDrawerLayout;
 
     private ColorScheme mColorScheme;
@@ -78,7 +79,7 @@ public class AndroidDisplay implements Display {
     private Toolbar mToolbar;
     private boolean mCanChangeToolbarBackground;
 
-    public AndroidDisplay(ActionBarActivity activity,
+    public AndroidDisplay(AppCompatActivity activity,
             DrawerLayout drawerLayout) {
         mActivity = Preconditions.checkNotNull(activity, "activity cannot be null");
         mDrawerLayout = drawerLayout;
