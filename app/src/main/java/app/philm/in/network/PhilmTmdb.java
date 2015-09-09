@@ -48,13 +48,9 @@ public class PhilmTmdb extends Tmdb {
         if (mCacheLocation != null) {
             OkHttpClient client = new OkHttpClient();
 
-            try {
-                File cacheDir = new File(mCacheLocation, UUID.randomUUID().toString());
-                Cache cache = new Cache(cacheDir, 1024);
-                client.setCache(cache);
-            } catch (IOException e) {
-                Log.e(TAG, "Could not use OkHttp Cache", e);
-            }
+            File cacheDir = new File(mCacheLocation, UUID.randomUUID().toString());
+            Cache cache = new Cache(cacheDir, 1024);
+            client.setCache(cache);
 
             client.setConnectTimeout(Constants.CONNECT_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS);
             client.setReadTimeout(Constants.READ_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS);
